@@ -1,0 +1,2 @@
+image: robjahn/keptn-orders-front-end:1
+replicaCount: 1
