@@ -1,0 +1,21 @@
+workloads:
+- teststrategy: performance
+  script:
+    repository: https://github.com/keptn-orders/keptn-onboarding.git
+    branch: neoload
+    project:
+    - path: /catalog/neoload/catalog_design.yaml
+    - path: /catalog/neoload/staging/catalog_basic.yaml
+    - path: /catalog/neoload/load_template/load_template.nlp
+  properties:
+    scenario: Catalogload
+    constant_variables:
+    - name: server_host
+      value: catalog.keptnorder-staging.svc.cluster.local
+    - name: server_port
+      value: 80
+    description: Catalogload
+  infrastructure:
+    managedbyKeptn: true
+    numberOfMachine: 1
+    zoneId: On10d
